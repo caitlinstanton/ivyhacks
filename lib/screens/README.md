@@ -1,0 +1,1 @@
+Contain folders for the different screens in the app. Each folder contains the primary screen file, and a components folder containing the components specific to that screen

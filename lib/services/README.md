@@ -1,0 +1,1 @@
+This folder will contain the code that talks with Google Firebase

@@ -3,12 +3,34 @@ import 'package:ivyhack/models/user_model.dart';
 
 class AuthService {
   final FirebaseAuth _authInstance = FirebaseAuth.instance;
+  
+  AppUser _getAppUserFromFirebaseUser(User firebaseUser) =>
+      firebaseUser == null ? null : AppUser(uid: firebaseUser.uid);
 
-  Future loginAnon() async {
+  Future register(String email, String password) async {
     try {
-      UserCredential result = await _authInstance.signInAnonymously();
+      UserCredential result =
+          await _authInstance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
       return _getAppUserFromFirebaseUser(result.user);
     } catch (e) {
+      print("Error caught");
+      print(e.toString());
+      return null;
+    }
+  }
+
+  Future login(String email, String password) async {
+    try {
+      UserCredential result = await _authInstance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return _getAppUserFromFirebaseUser(result.user);
+    } catch (e) {
+      print("Error caught");
       print(e.toString());
       return null;
     }
@@ -22,9 +44,6 @@ class AuthService {
       return null;
     }
   }
-
-  AppUser _getAppUserFromFirebaseUser(User firebaseUser) =>
-      firebaseUser == null ? null : AppUser(uid: firebaseUser.uid);
 
   // Gets stream of User objects from Firebase (either null or User)
   // then converts that stream in AppUser objects

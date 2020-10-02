@@ -82,10 +82,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             dynamic result =
                                 await _authService.register(email, password);
                             // Then validate from Firebase's side
-                            setState(() {
-                              error = 'Invalid email';
-                              is_loading = false;
-                            });
+                            if (result == null) {
+                              setState(() {
+                                error = 'Invalid email';
+                                is_loading = false;
+                              });
+                            }
                           }
                         }),
                     SizedBox(height: 10.0),

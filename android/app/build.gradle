@@ -40,7 +40,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.ivyhack"
-        minSdkVersion 16
+        minSdkVersion 21 // Has to be >= 21 to make sure multidex is enabled. Otherwise, include "multiDexEnabled true" below
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

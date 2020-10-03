@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: <Widget>[
               SizedBox(height: 20.0),
               userTextField(
-                hint: "Username",
+                hint: "Email",
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(textFieldCurve),
                   topRight: Radius.circular(textFieldCurve),
@@ -44,12 +44,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   userTextField(
                     hint: "Password",
+                    isObscureText: true,
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(textFieldCurve),
                       bottomRight: Radius.circular(textFieldCurve),
                     ),
                     onChanged: (val) {
-                      setState(() => email = val);
+                      setState(() => password = val);
                     },
                   ),
                   Align(
@@ -59,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: Colors.greenAccent[200],
                       ),
                       onPressed: () {
-                        print("Log in");
+                        print("Log in with $email as email and $password as password");
                       },
                     ),
                     alignment: Alignment.centerRight,
@@ -76,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ), // Doesn't actually do anything
               authButton("Create your account!", () {
-                print("Create account!");
+                print("Create account with $email as email and $password as password");
               }),
             ],
           ),

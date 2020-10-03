@@ -40,15 +40,31 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
               ),
               SizedBox(height: 2),
-              userTextField(
-                hint: "Password",
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(textFieldCurve),
-                  bottomRight: Radius.circular(textFieldCurve),
-                ),
-                onChanged: (val) {
-                  setState(() => email = val);
-                },
+              Stack(
+                children: [
+                  userTextField(
+                    hint: "Password",
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(textFieldCurve),
+                      bottomRight: Radius.circular(textFieldCurve),
+                    ),
+                    onChanged: (val) {
+                      setState(() => email = val);
+                    },
+                  ),
+                  Align(
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.arrow_right_alt,
+                        color: Colors.greenAccent[200],
+                      ),
+                      onPressed: () {
+                        print("Log in");
+                      },
+                    ),
+                    alignment: Alignment.centerRight,
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -59,11 +75,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ), // Doesn't actually do anything
-              authButton("Sign in", () {
-                print("Pressed!");
-              }),
               authButton("Create your account!", () {
-                print("Pressed!");
+                print("Create account!");
               }),
             ],
           ),

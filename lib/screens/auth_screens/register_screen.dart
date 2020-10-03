@@ -20,6 +20,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   String email = '';
   String password = '';
+  String name = '';
   String error = '';
   bool is_loading = false;
 
@@ -47,6 +48,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 key: _formKey,
                 child: Column(
                   children: <Widget>[
+                    SizedBox(height: 20.0),
+                    TextFormField(
+                      decoration:
+                          textInputDecoration.copyWith(hintText: "Name"),
+                      validator: (val) => val.isEmpty ? "Enter a name" : null,
+                      onChanged: (val) {
+                        setState(() => name = val);
+                      },
+                    ),
                     SizedBox(height: 20.0),
                     TextFormField(
                       decoration:
@@ -80,7 +90,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           if (_formKey.currentState.validate()) {
                             setState(() => is_loading = true);
                             dynamic result =
-                                await _authService.register(email, password);
+                                await _authService.register(email, password, name);
                             // Then validate from Firebase's side
                             if (result == null) {
                               setState(() {

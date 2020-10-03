@@ -9,7 +9,7 @@ class AuthWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appUser = Provider.of<AppUser>(context);
-
+    
     // Either home or login screen
     if (appUser == null){
       return AuthScreen();

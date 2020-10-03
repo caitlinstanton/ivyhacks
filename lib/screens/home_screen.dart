@@ -83,7 +83,13 @@ class _HomeState extends State<Home> {
                   "/page2",
                 ); // This name is defined in routes.dart
               },
-            )
+            ),
+            Text(
+                "For developing screens, can use this 'other screen' (i.e. screen.dart) as the test bed."),
+            Text(
+                "For example, if I want to create a map page, I can put map code in screens/screen.dart and then click the above blue button to navigate to the 'other screen' to see the result. "),
+            Text(
+                "That's what I'll be doing (but on a seperate branch of course).")
           ],
         ),
       ),

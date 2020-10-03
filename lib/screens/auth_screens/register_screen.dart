@@ -89,8 +89,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           // First validate using our rules
                           if (_formKey.currentState.validate()) {
                             setState(() => is_loading = true);
-                            dynamic result =
-                                await _authService.register(email, password, name);
+                            dynamic result = await _authService.register(
+                                email, password, name);
                             // Then validate from Firebase's side
                             if (result == null) {
                               setState(() {

@@ -13,6 +13,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   // TODO: Temprorary layout. Will be changed.
+  // TODO: Also a lot of repeated code from register screen.
+  // ^ If end up login similar to register, then could maybe combine the two
   final AuthService _authService = AuthService();
   final _formKey = GlobalKey<FormState>();
   String email = '';

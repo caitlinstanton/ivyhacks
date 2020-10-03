@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ivyhack/models/constants.dart';
-import 'package:ivyhack/models/user_model.dart';
 
 class DatabaseService {
   final String uid;
@@ -15,8 +14,8 @@ class DatabaseService {
   final CollectionReference dataCollection =
       FirebaseFirestore.instance.collection(Constant.DATA_COLLECTION_NAME);
 
-  Future updateData(AppUser user) async {
-    return await dataCollection.doc(uid).set(user.data);
+  Future updateData(Map<String, dynamic> data) async {
+    return await dataCollection.doc(uid).set(data);
   }
 
   Future<Map<String, dynamic>> getUserData() async {

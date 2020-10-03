@@ -22,6 +22,11 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: Colors.greenAccent[200],
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/login_background.png"),
+              fit: BoxFit.cover),
+        ),
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Form(
           key: _formKey,
@@ -60,7 +65,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: Colors.greenAccent[200],
                       ),
                       onPressed: () {
-                        print("Log in with $email as email and $password as password");
+                        print(
+                            "Log in with $email as email and $password as password");
                       },
                     ),
                     alignment: Alignment.centerRight,
@@ -77,7 +83,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ), // Doesn't actually do anything
               authButton("Create your account!", () {
-                print("Create account with $email as email and $password as password");
+                print(
+                    "Create account with $email as email and $password as password");
               }),
             ],
           ),

@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
+import 'package:ivyhack/screens/auth_screens/login_screen.dart';
 import 'package:ivyhack/screens/home_screen.dart';
-import 'package:ivyhack/screens/screen2/screen2.dart';
 
 
 final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   '/': (context) => Home(),
-  '/page2': (context) => AnotherScreen(),
+  '/auth': (context) => LoginScreen(), // to be changed to auth_screen
 };

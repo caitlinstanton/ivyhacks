@@ -80,7 +80,7 @@ class _HomeState extends State<Home> {
               onPressed: () {
                 Navigator.pushNamed(
                   context,
-                  "/page2",
+                  "/auth",
                 ); // This name is defined in routes.dart
               },
             ),

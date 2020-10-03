@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
+class SettingsScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _SettingsScreenState createState() => _SettingsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple,
+      backgroundColor: Colors.blue,
       body: Center(
         child: Text(
-          "Home",
+          "Settings",
           style: TextStyle(
             fontSize: 50,
           ),

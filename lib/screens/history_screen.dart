@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
+class HistoryScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HistoryScreenState createState() => _HistoryScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple,
+      backgroundColor: Colors.green,
       body: Center(
         child: Text(
-          "Home",
+          "History",
           style: TextStyle(
             fontSize: 50,
           ),

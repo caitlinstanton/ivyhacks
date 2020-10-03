@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ivyhack/models/user_model.dart';
 
 class Home extends StatefulWidget {
   Home({Key key, this.title}) : super(key: key);
@@ -40,6 +41,13 @@ class _HomeState extends State<Home> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
+    // This will store the global state and passed to other pages <-------------------------------------
+    // So that other pages can access the info.
+    // e.g. for passing user inputs (e.g. food items) gotten from one page to another page
+    UserState userState = UserState();
+    userState.uid = "IVYHACKS2020"; // Used to demonstrate the userState being passed down
+
     return Scaffold(
       appBar: AppBar(
         title: Text("This is the home page!"),
@@ -51,12 +59,7 @@ class _HomeState extends State<Home> {
           // Column is also a layout widget. It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
           // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
+
           // Column has various properties to control how it sizes itself and
           // how it positions its children. Here we use mainAxisAlignment to
           // center the children vertically; the main axis here is the vertical
@@ -80,8 +83,9 @@ class _HomeState extends State<Home> {
               onPressed: () {
                 Navigator.pushNamed(
                   context,
-                  "/page2",
-                ); // This name is defined in routes.dart
+                  "/page2", // This name is defined in routes.dart
+                  arguments: userState, // <-- State is passed to the next page here
+                );
               },
             ),
             Text(

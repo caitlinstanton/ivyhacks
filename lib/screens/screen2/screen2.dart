@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ivyhack/models/user_model.dart';
 
 class AnotherScreen extends StatefulWidget {
   @override
@@ -6,8 +7,14 @@ class AnotherScreen extends StatefulWidget {
 }
 
 class _AnotherScreenState extends State<AnotherScreen> {
+  
+
   @override
   Widget build(BuildContext context) {
+    // This screen receives the state from the previous screen
+    final UserState userState = ModalRoute.of(context).settings.arguments;
+
+
     return Scaffold(
         appBar: AppBar(title: Text("This is another screen!")),
         body: Column(
@@ -25,6 +32,7 @@ class _AnotherScreenState extends State<AnotherScreen> {
               ),
             ),
             Text("The back arrow also does a pop action!"),
+            Text("Oh and also, the state var that was passed to this page is ${userState.uid}"),
           ],
         ));
   }

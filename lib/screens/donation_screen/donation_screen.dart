@@ -14,43 +14,61 @@ class _DonationScreenState extends State<DonationScreen> {
   Widget build(BuildContext context) {
     List<Company> companies = Constant.DONATE_COMPANIES;
 
-    // TODO: Do stuff with the list of companies
-    // Possibly use listview.builder
     Size screen = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Colors.green[50],
         body: Column(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(screen.height * 0.05),
+              padding: EdgeInsets.only(
+                top: screen.height * 0.05,
+                bottom: 10,
+              ),
               child: Column(
+                //TODO: Convert text into senText
                 children: [
-                  Text(
-                    "Non-profits & Charities",
-                    style: GoogleFonts.lato(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Non-profits & Charities",
+                      style: GoogleFonts.lato(
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   Text(
-                    "Donate to a non-profit charity or organization. Every 100 FootPrints, we will donate \$5!",
+                    "Donate to a non-profit charity or organization.",
                     textAlign: TextAlign.center,
+                    style: GoogleFonts.lato(
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  Text(
+                    "Every 100 FootPrints, we will donate \$5!",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.lato(
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                 ],
               ),
             ),
-            // ListView.builder( // Not working currently
-            //   scrollDirection: Axis.vertical,
-            //   itemCount: (companies.length / 2).ceil(),
-            //   itemBuilder: (context, index) {
-            //     return companyRow(
-            //         companies[index * 2], companies[index * 2 + 1], screen);
-            //   },
-            // ),
-            companyRow(
-              companies[0],
-              companies[1],
-              screen,
+            Expanded(
+              child: Container(
+                width: screen.width,
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: (companies.length / 2).ceil(),
+                  itemBuilder: (context, index) {
+                    // return FlatButton(child: Text("#$index"), onPressed: null,);
+                    return companyRow(
+                        companies[index * 2], companies[index * 2 + 1], screen);
+                  },
+                ),
+              ),
             ),
           ],
         ));

@@ -23,8 +23,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 30.0),
               child: SenText(
-                "Welcome Hacker!",
-                color: Colors.black87,
+                "Account",
+                color: Colors.white,
                 fontSize: 25.0,
               ),
             ),
@@ -53,9 +53,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       },
                     ),
                     itemCard("Change Password"),
-                    itemCard("Language"),
                     itemCard("Preferences"),
-                    itemCard("About"),
+                    itemCard("Language"),
+                    itemCard("What is Carbon Footprint?"),
                   ],
                 ),
               ),

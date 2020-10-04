@@ -18,16 +18,26 @@ class Constant {
   };
 
   static List<List> SAMPLE_HISTORICAL_ACTS = [
-    [DateTime(2020, 9, 29).toString(), "Eat a vegan meal."],
-    [DateTime(2020, 9, 30).toString(), "Eat a vegan meal."],
-    [DateTime(2020, 9, 30).toString(), "Eat a vegan meal."],
-    [DateTime(2020, 9, 30).toString(), "Eat a vegan meal."],
-    [DateTime(2020, 10, 1).toString(), "Ride bicycle for 5 miles"],
-    [DateTime(2020, 10, 2).toString(), "Carpool with coworkers."],
-    [DateTime(2020, 10, 3).toString(), "Eat a vegan meal."],
-    [DateTime(2020, 10, 4).toString(), "Use reusable water bottle."],
-    [DateTime(2020, 10, 5).toString(), "Carpool with coworkers."],
+    ["vegan", DateTime(2020, 9, 29).toString(), "Eat a vegan meal."],
+    ["vegan", DateTime(2020, 9, 30).toString(), "Eat a vegan meal."],
+    ["vegan", DateTime(2020, 9, 30).toString(), "Eat a vegan meal."],
+    ["vegan", DateTime(2020, 9, 30).toString(), "Eat a vegan meal."],
+    ["bike", DateTime(2020, 10, 1).toString(), "Ride bicycle for 5 miles"],
+    ["carpool", DateTime(2020, 10, 2).toString(), "Carpool with coworkers."],
+    ["vegan", DateTime(2020, 10, 3).toString(), "Eat a vegan meal."],
+    ["reusable", DateTime(2020, 10, 4).toString(), "Use reusable water bottle."],
+    ["carpool", DateTime(2020, 10, 5).toString(), "Carpool with coworkers."],
   ];
+  
+  static Map<String, IconData> CATEGORIES_TO_ICONS = {
+    "vegan": Icons.no_food,
+    "bike": Icons.directions_bike,
+    "carpool": Icons.directions_car,
+    "reusable": Icons.local_drink,
+    "flights": Icons.airplanemode_inactive,
+    "local": Icons.agriculture_outlined,
+    "transportation": Icons.airport_shuttle,
+  };
   
   static List<Company> DONATE_COMPANIES = [
     Company(

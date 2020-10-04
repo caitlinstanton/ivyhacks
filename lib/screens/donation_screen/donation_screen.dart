@@ -64,7 +64,7 @@ class _DonationScreenState extends State<DonationScreen> {
             Expanded(
               child: Container(
                 width: screen.width,
-                child: ListView.builder(
+                child: ListView.builder( // PROBABLY COULD'VE USED GRIDVIEW
                   scrollDirection: Axis.vertical,
                   itemCount: (companies.length / 2).ceil(),
                   itemBuilder: (context, index) {

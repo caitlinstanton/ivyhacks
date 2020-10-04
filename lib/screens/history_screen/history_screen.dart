@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ivyhack/components/item_card.dart';
+import 'package:ivyhack/components/text_divider.dart';
 import 'package:ivyhack/models/constants.dart';
 import 'package:ivyhack/models/graph_model.dart';
 import 'package:ivyhack/models/text.dart';
@@ -19,6 +20,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
     List<List> historicalActs =
         Constant.SAMPLE_HISTORICAL_ACTS.reversed.toList();
     Map historicalScores = StrMap2DtMap(Constant.SAMPLE_HISTORICAL_SCORES);
+    Map<String, IconData> categories2icons = Constant.CATEGORIES_TO_ICONS;
 
     return Scaffold(
       backgroundColor: Colors.green[100],
@@ -36,28 +38,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 height: screen.height * 0.35,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                color: Colors.white,
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                      child: Divider(color: Colors.green[900], thickness: 4.5),
-                    ),
-                    Center(
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: SenText("Recent Activity"),
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            textDivider("Recent Activity"),
             Expanded(
               child: Container(
                 width: screen.width,
@@ -67,8 +48,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   itemCount: historicalActs.length,
                   itemBuilder: (context, index) {
                     return itemCard(
-                      historicalActs[index][1],
-                      time: historicalActs[index][0],
+                      historicalActs[index][2],
+                      time: historicalActs[index][1],
+                      iconData: categories2icons[historicalActs[index][0]]
                     );
                   },
                 ),

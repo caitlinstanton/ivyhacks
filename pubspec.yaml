@@ -54,6 +54,8 @@ flutter:
   assets:
     - assets/login_background.png
     - assets/red_cross.png
+    - assets/ivyhacks_logo.png
+    - assets/settings_background.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

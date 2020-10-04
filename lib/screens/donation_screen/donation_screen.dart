@@ -43,7 +43,15 @@ class _DonationScreenState extends State<DonationScreen> {
                     ),
                   ),
                   Text(
-                    "For every 100 FootPrints saved, we will donate \$5!",
+                    "For every 100 Credits earned, we will donate \$5!",
+                    textAlign: TextAlign.center,
+                    style: sen(
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  Text(
+                    "You currently have 20 points.",
                     textAlign: TextAlign.center,
                     style: sen(
                       fontSize: 15,

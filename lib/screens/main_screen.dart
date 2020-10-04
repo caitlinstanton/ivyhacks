@@ -38,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
         label: "Map",
       ),
       BottomNavigationBarItem(
-        icon: Icon(Entypo.globe),
+        icon: Icon(Icons.card_giftcard_rounded),
         label: "Donate",
       ),
       BottomNavigationBarItem(

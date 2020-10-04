@@ -55,7 +55,7 @@ class Constant {
     Company(
       name: "Wildlife Conservation Society",
       subtitle: "International",
-      imageURL: "https://pentagram-production.imgix.net/94ec776c-45bc-47b9-acc9-a3d9202b3892/mb_wildlifeconservationsociety_02.jpg?rect=%2C%2C%2C&w=640&crop=1&fm=jpg&q=70&auto=format&fit=crop&h=400",
+      imageURL: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Wildlife_cs_logo15.png",
       briefDescription: "Conserving wildlife habitats in 14 priority regions around the world.",
       fullDescription: "Originally founded with the New York Zoological Society in 1895. They envisioned an organization that would save wildlife in North America and connects people to nature through the Bronx Zoo.\n\nAs they transformed into WCS, they have expanded field conservation operations to close to 60 nations and all the world's oceans. Using science and our wildlife expertise, they supported governments and communities in the creation or expansion of 245 protected areas—from the remote mountains of Afghanistan to the windswept wilderness of Chile's Tierra del Fuego.",
     ),

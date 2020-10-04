@@ -10,7 +10,7 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   GoogleMapController mapController;
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  final LatLng _center = const LatLng(47.25, -122.5);
   List<Marker> allMarkers = [
     Marker(
       markerId: MarkerId("Seattle"),
@@ -29,7 +29,13 @@ class _MapScreenState extends State<MapScreen> {
       draggable: false,
       position: LatLng(49.25, -123.1),
       infoWindow: InfoWindow(title: "Vancouver Avg: 22"),
-    )
+    ),
+    Marker(
+      markerId: MarkerId("Victoria"),
+      draggable: false,
+      position: LatLng(48.42, -123.35),
+      infoWindow: InfoWindow(title: "Victoria Avg: 33"),
+    ),
   ];
 
   void _onMapCreated(GoogleMapController controller) {

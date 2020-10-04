@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           value: AuthService().firebaseUser,
           child: MaterialApp(
             title: "IvyHack",
-            initialRoute: '/', // To override the default of '/'
+            initialRoute: '/map', // To override the default of '/'
             routes: routes,
           ),
         );

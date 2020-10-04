@@ -60,9 +60,12 @@ class _DonationScreenState extends State<DonationScreen> {
                   scrollDirection: Axis.vertical,
                   itemCount: (companies.length / 2).ceil(),
                   itemBuilder: (context, index) {
-                    // return FlatButton(child: Text("#$index"), onPressed: null,);
                     return companyRow(
-                        companies[index * 2], companies[index * 2 + 1], screen);
+                      context,
+                      companies[index * 2],
+                      companies[index * 2 + 1],
+                      screen,
+                    );
                   },
                 ),
               ),

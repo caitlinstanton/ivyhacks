@@ -12,6 +12,7 @@ class Constant {
         imageURL:"https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/1_fgp9fp3h/def_height/1414/def_width/2700/version/100011/type/2/q/100",
         briefDescription: "Providing emergency assistance, disaster relief, and education in the U.S.",
         fullDescription:"The American branch was founded in 1881 by Clara Barton. Their mission is to alleviate and prevent human suffering by mobilizing volunteer services. Some of the great services that they provide are a disaster and emergency relief, blood donations, military/veteran services, international services, and preparedness education programs. They have actively served and aided in disasters, such as Hurricane Katrina, California and Oregon wildfires, and Midwest floods.",
+        isDetailsDisplayable: true, // So far only this one has a zoom in version
     ),
     Company(
         name: "Habitat for Humanity",

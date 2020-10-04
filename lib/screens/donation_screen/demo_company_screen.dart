@@ -15,7 +15,7 @@ class CompanyDetailsScreen extends StatelessWidget {
       slivers: <Widget>[
         SliverAppBar(
           iconTheme: IconThemeData(
-            color: Colors.black, //change your color here
+            color: Colors.white,
           ),
           pinned: true,
           expandedHeight: screen.height * 0.4,

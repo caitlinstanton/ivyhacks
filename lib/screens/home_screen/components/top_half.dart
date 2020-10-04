@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ivyhack/models/text.dart';
+import 'package:ivyhack/screens/home_screen/components/more_options.dart';
 
 class TopHalf extends StatefulWidget {
   @override
@@ -112,6 +113,9 @@ class _TopHalfState extends State<TopHalf> {
                 Icons.library_add,
                 color: Colors.green[400],
                 tooltip: "Track a footprint",
+                onPressed: () {
+                  showOptions(context);
+                },
               ),
             ),
           ],
@@ -131,6 +135,7 @@ class _TopHalfState extends State<TopHalf> {
     Color color,
     double deltaScore,
     String tooltip,
+    void Function() onPressed,
   }) =>
       GestureDetector(
         child: Tooltip(
@@ -146,10 +151,11 @@ class _TopHalfState extends State<TopHalf> {
             child: Icon(iconData, size: 30, color: Colors.white),
           ),
         ),
-        onTap: () {
-          print("Pressed '$tooltip'. ");
-          _currentScore += deltaScore ?? 0;
-          setState(() {});
-        },
+        onTap: onPressed ??
+            () {
+              print("Pressed '$tooltip'. ");
+              _currentScore += deltaScore ?? 0;
+              setState(() {});
+            },
       );
 }

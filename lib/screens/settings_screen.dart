@@ -11,11 +11,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
       backgroundColor: Colors.blue,
       body: Center(
-        child: Text(
-          "Settings",
-          style: TextStyle(
-            fontSize: 50,
-          ),
+        child: Column(
+          children: [
+            Text(
+              "Settings",
+              style: TextStyle(
+                fontSize: 50,
+              ),
+            ),
+            RaisedButton(
+              child: Text("Log in page"),
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  "/auth",
+                );
+              },
+            )
+          ],
         ),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ivyhack/models/constants.dart';
 import 'package:ivyhack/models/company_model.dart';
+import 'package:ivyhack/models/text.dart';
 import 'package:ivyhack/screens/donation_screen/components/company_widgets.dart';
 
 class DonationScreen extends StatefulWidget {
@@ -29,18 +30,16 @@ class _DonationScreenState extends State<DonationScreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(
+                    child: SenText(
                       "Non-profits & Charities",
-                      style: GoogleFonts.lato(
-                        fontSize: 21,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      fontSize: 21,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     "Donate to a non-profit charity or organization.",
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.lato(
+                    style: sen(
                       fontSize: 15,
                       fontWeight: FontWeight.normal,
                     ),
@@ -48,7 +47,7 @@ class _DonationScreenState extends State<DonationScreen> {
                   Text(
                     "Every 100 FootPrints, we will donate \$5!",
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.lato(
+                    style: sen(
                       fontSize: 15,
                       fontWeight: FontWeight.normal,
                     ),

@@ -13,7 +13,7 @@ Widget userTextField(
         hintText: hint,
         hintStyle:
             sen(color: Colors.grey, fontSize: 15, fontWeight: FontWeight.bold),
-        fillColor: Colors.white,
+        fillColor: Colors.white.withOpacity(0.9),
         filled: true,
         // enabledBorder: OutlineInputBorder(
         //   borderSide: BorderSide(

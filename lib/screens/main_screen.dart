@@ -1,8 +1,8 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:ivyhack/screens/donation_screen.dart';
-import 'package:ivyhack/screens/history_screen.dart';
+import 'package:ivyhack/screens/donation_screen/donation_screen.dart';
+import 'package:ivyhack/screens/history_screen/history_screen.dart';
 import 'package:ivyhack/screens/home_screen.dart';
 import 'package:ivyhack/screens/settings_screen.dart';
 
@@ -42,20 +42,6 @@ class _MainScreenState extends State<MainScreen> {
       ),
     ];
     return Scaffold(
-      appBar: AppBar(
-        title: Text("This is the home page!"),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.ac_unit),
-            onPressed: () {
-              Navigator.pushNamed(
-                context,
-                "/auth",
-              );
-            },
-          ),
-        ],
-      ),
       body: Center(
           child: PageTransitionSwitcher(
         child: getScreen(_currIndex),
@@ -94,9 +80,9 @@ Widget getScreen(int idx) {
     return HomeScreen();
   } else if (idx == 1) {
     return HistoryScreen();
-  }else if (idx == 2) {
+  } else if (idx == 2) {
     return DonationScreen();
-  }else if (idx == 3) {
+  } else if (idx == 3) {
     return SettingsScreen();
   }
 }

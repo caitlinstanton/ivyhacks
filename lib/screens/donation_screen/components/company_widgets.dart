@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ivyhack/models/company_model.dart';
+import 'package:ivyhack/models/text.dart';
 
 Widget companyRow(Company company1, Company company2, Size screen) {
   const double side_ratio = 0.07;
@@ -44,12 +45,10 @@ Widget companyCard(Company company, double width, double height) {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text(
+              SenText(
                 company.subtitle,
-                style: GoogleFonts.lato(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
               ),
             ],
           ),

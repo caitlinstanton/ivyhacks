@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextStyle sen({double fontSize, FontWeight fontWeight, Color color}) =>
-    GoogleFonts.lato(
+    GoogleFonts.sen(
       fontSize: fontSize ?? 15,
       fontWeight: fontWeight ?? FontWeight.normal,
       color: color ?? Colors.black,

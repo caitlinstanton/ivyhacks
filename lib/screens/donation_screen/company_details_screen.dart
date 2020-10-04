@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ivyhack/models/text.dart';
 
 class CompanyDetailsScreen extends StatelessWidget {
   @override
@@ -14,12 +15,10 @@ class CompanyDetailsScreen extends StatelessWidget {
         SliverAppBar(
           title: Align(
             alignment: Alignment.bottomCenter,
-            child: Text(
+            child: SenText(
               "American Red Cross",
-              style: GoogleFonts.lato(
-                fontSize: 21,
-                fontWeight: FontWeight.bold,
-              ),
+              fontSize: 21,
+              fontWeight: FontWeight.bold,
             ),
           ), //MyAppBar(),
           pinned: true,

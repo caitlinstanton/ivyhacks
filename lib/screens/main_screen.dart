@@ -4,6 +4,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:ivyhack/screens/donation_screen/donation_screen.dart';
 import 'package:ivyhack/screens/history_screen/history_screen.dart';
 import 'package:ivyhack/screens/home_screen/home_screen.dart';
+import 'package:ivyhack/screens/map_screen/map.dart';
 import 'package:ivyhack/screens/settings_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -31,6 +32,10 @@ class _MainScreenState extends State<MainScreen> {
       BottomNavigationBarItem(
         icon: Icon(Icons.insert_chart_rounded),
         label: "History",
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Entypo.globe),
+        label: "Map",
       ),
       BottomNavigationBarItem(
         icon: Icon(Entypo.globe),
@@ -80,8 +85,10 @@ Widget getScreen(int idx) {
   } else if (idx == 1) {
     return HistoryScreen();
   } else if (idx == 2) {
-    return DonationScreen();
+    return MapScreen();
   } else if (idx == 3) {
+    return DonationScreen();
+  } else if (idx == 4) {
     return SettingsScreen();
   }
 }

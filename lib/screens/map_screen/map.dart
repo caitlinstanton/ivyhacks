@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapWidget extends StatefulWidget {
+class MapScreen extends StatefulWidget {
   @override
-  _MapState createState() => _MapState();
+  _MapScreenState createState() => _MapScreenState();
 }
 
-class _MapState extends State<MapWidget> {
+class _MapScreenState extends State<MapScreen> {
   GoogleMapController mapController;
   final LatLng _center = const LatLng(45.521563, -122.677433);
   List<Marker> allMarkers = [
@@ -44,7 +44,7 @@ class _MapState extends State<MapWidget> {
           onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
             target: _center,
-            zoom: 11.0,
+            zoom: 7.0,
           ),
           markers: allMarkers.toSet(),
         ),

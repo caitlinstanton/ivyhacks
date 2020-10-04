@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ivyhack/models/constants.dart';
 
 class HistoryScreen extends StatefulWidget {
   @override
@@ -9,7 +10,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Constant.LIGHT_GREEN,
       body: Center(
         child: Text(
           "History",

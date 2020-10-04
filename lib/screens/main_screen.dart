@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:ivyhack/screens/donation_screen/donation_screen.dart';
 import 'package:ivyhack/screens/history_screen/history_screen.dart';
-import 'package:ivyhack/screens/home_screen.dart';
+import 'package:ivyhack/screens/home_screen/home_screen.dart';
 import 'package:ivyhack/screens/settings_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -42,36 +42,35 @@ class _MainScreenState extends State<MainScreen> {
       ),
     ];
     return Scaffold(
-      body: Center(
-          child: PageTransitionSwitcher(
-        child: getScreen(_currIndex),
-        transitionBuilder: (child, animation, secondaryAnimation) {
-          return FadeThroughTransition(
-            child: child,
-            animation: animation,
-            secondaryAnimation: secondaryAnimation,
-          );
-        },
-      )),
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        items: bottomNavigationBarItems,
-        currentIndex: _currIndex,
-        type: BottomNavigationBarType.fixed,
-        selectedFontSize: 20,
-        unselectedFontSize: 20,
-        onTap: (index) {
-          setState(() {
-            _currIndex = index;
-            print("Chose $index");
-          });
-        },
-        selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.green.withOpacity(0.38),
-        backgroundColor: Colors.white,
-      ),
-    );
+        body: Center(
+            child: PageTransitionSwitcher(
+          child: getScreen(_currIndex),
+          transitionBuilder: (child, animation, secondaryAnimation) {
+            return FadeThroughTransition(
+              child: child,
+              animation: animation,
+              secondaryAnimation: secondaryAnimation,
+            );
+          },
+        )),
+        bottomNavigationBar: BottomNavigationBar(
+          showSelectedLabels: true,
+          showUnselectedLabels: false,
+          items: bottomNavigationBarItems,
+          currentIndex: _currIndex,
+          type: BottomNavigationBarType.fixed,
+          selectedFontSize: 20,
+          unselectedFontSize: 20,
+          onTap: (index) {
+            setState(() {
+              _currIndex = index;
+              print("Chose $index");
+            });
+          },
+          selectedItemColor: Colors.green,
+          unselectedItemColor: Colors.green.withOpacity(0.38),
+          backgroundColor: Colors.white,
+        ));
   }
 }
 

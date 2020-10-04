@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:ivyhack/models/company_model.dart';
 
 class Constant {
   static const String DATA_COLLECTION_NAME = "user_data";
+  static Color LIGHT_GREEN = Color(0xB1E7C7).withOpacity(0.31);
   
   static List<Company> DONATE_COMPANIES = [
     Company(

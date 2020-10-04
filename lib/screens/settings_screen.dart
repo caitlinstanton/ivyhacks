@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ivyhack/services/auth_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -6,6 +7,7 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,12 +22,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
             RaisedButton(
-              child: Text("Log in page"),
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  "/auth",
-                );
+              child: Text("Log out"),
+              onPressed: () async{
+                await AuthService().logout();
               },
             )
           ],

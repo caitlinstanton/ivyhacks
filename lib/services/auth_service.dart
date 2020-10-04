@@ -5,7 +5,7 @@ import 'package:ivyhack/services/database_service.dart';
 class AuthService {
   final FirebaseAuth _authInstance = FirebaseAuth.instance;
 
-  Future register(String email, String password, String name) async {
+  Future register(String email, String password, {String name = "User"}) async {
     try {
       // Create new account on Firebase
       UserCredential result =
@@ -16,7 +16,8 @@ class AuthService {
       User firebaseUser = result.user;
 
       // Create a new Firestore entry for the new account
-      await DatabaseService(uid: firebaseUser.uid).updateData(getBlankData(name));
+      await DatabaseService(uid: firebaseUser.uid)
+          .updateData(getBlankData(name));
 
       return firebaseUser;
     } catch (e) {

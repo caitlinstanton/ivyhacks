@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ivyhack/models/text.dart';
 import 'package:ivyhack/screens/auth_screens/components/user_text_fields.dart';
 import 'package:ivyhack/components/loading.dart';
-import 'package:ivyhack/components/text_input.dart';
 import 'package:ivyhack/services/auth_service.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -73,7 +72,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               color: Colors.greenAccent[200],
                             ),
                             onPressed: () async {
-                              // Assume valid
+                              print("Signing in with $email as email and $password as password");
+                              // ASSUME valid
                               setState(() => is_loading = true);
                               dynamic result =
                                   await _authService.login(email, password);
@@ -99,9 +99,19 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ), // Doesn't actually do anything
-                    authButton("Create your account!", () {
+                    authButton("Create your account!", () async {
                       print(
                           "Create account with $email as email and $password as password");
+                      // Again ASSUME valid
+                      setState(() => is_loading = true);
+                      dynamic result = await _authService.register(email, password);
+                      // Validate from Firebase's side
+                      if (result == null) {
+                        setState(() {
+                          error = 'Invalid email';
+                          is_loading = false;
+                        });
+                      }
                     }),
                   ],
                 ),

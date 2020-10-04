@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ivyhack/models/constants.dart';
 import 'package:ivyhack/models/company_model.dart';
 import 'package:ivyhack/models/text.dart';
@@ -26,7 +25,6 @@ class _DonationScreenState extends State<DonationScreen> {
                 bottom: 10,
               ),
               child: Column(
-                //TODO: Convert text into senText (and change lato into sen)
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),

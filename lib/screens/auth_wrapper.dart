@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ivyhack/screens/auth_screens/auth_screen.dart';
-import 'package:ivyhack/screens/home_screen/home_screen.dart';
+import 'package:ivyhack/screens/auth_screens/login_screen.dart';
+import 'package:ivyhack/screens/main_screen.dart';
 import 'package:provider/provider.dart';
 
 class AuthWrapper extends StatelessWidget {
@@ -12,9 +12,9 @@ class AuthWrapper extends StatelessWidget {
 
     // Either home or login screen
     if (firebaseUser == null) {
-      return AuthScreen();
+      return LoginScreen();
     } else {
-      return HomeScreen();
+      return MainScreen();
     }
   }
 }

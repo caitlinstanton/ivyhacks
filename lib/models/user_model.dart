@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ivyhack/models/constants.dart';
 
 class UserState extends ChangeNotifier {
   String uid;
@@ -9,6 +10,16 @@ class UserState extends ChangeNotifier {
 Map<String, dynamic> getBlankData(String name) {
   return {
     "name": name == null ? "" : name,
-    //TODO: Define properties!
+    // Demo purposes
+    "actions": Constant.SAMPLE_HISTORICAL_ACTS,
+    "scores": Constant.SAMPLE_HISTORICAL_SCORES,
   };
+}
+
+Map<DateTime, double> StrMap2DtMap(Map<String, double> strMap) {
+  Map<DateTime, double> dtMap = {};
+  strMap.forEach((strDt, y) {
+    dtMap[DateTime.parse(strDt)] = y;
+  });
+  return dtMap;
 }

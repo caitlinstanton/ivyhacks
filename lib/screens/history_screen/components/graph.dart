@@ -35,3 +35,26 @@ class StackedAreaCustomColorLineChart extends StatelessWidget {
     );
   }
 }
+
+class SimpleTimeSeriesChart extends StatelessWidget {
+  final List<charts.Series> seriesList;
+  final bool animate;
+  final height;
+  final width;
+
+  SimpleTimeSeriesChart(this.seriesList,
+      {this.width, this.height, this.animate});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height ?? 200,
+      width: width ?? 200,
+      child: charts.TimeSeriesChart(
+        seriesList,
+        animate: animate,
+        dateTimeFactory: const charts.LocalDateTimeFactory(),
+      ),
+    );
+  }
+}

@@ -4,6 +4,30 @@ import 'package:ivyhack/models/company_model.dart';
 class Constant {
   static const String DATA_COLLECTION_NAME = "user_data";
   static Color LIGHT_GREEN = Color(0xB1E7C7).withOpacity(0.31);
+
+  static Map<String, double> SAMPLE_HISTORICAL_SCORES = {
+    DateTime(2020, 9, 27).toString(): 5,
+    DateTime(2020, 9, 28).toString(): 8,
+    DateTime(2020, 9, 29).toString(): 5,
+    DateTime(2020, 9, 30).toString(): 1,
+    DateTime(2020, 10, 1).toString(): 0,
+    DateTime(2020, 10, 2).toString(): 2,
+    DateTime(2020, 10, 3).toString(): -5,
+    DateTime(2020, 10, 4).toString(): 3,
+    DateTime(2020, 10, 5).toString(): 2,
+  };
+
+  static List<List> SAMPLE_HISTORICAL_ACTS = [
+    [DateTime(2020, 9, 29).toString(), "Eat a vegan meal."],
+    [DateTime(2020, 9, 30).toString(), "Eat a vegan meal."],
+    [DateTime(2020, 9, 30).toString(), "Eat a vegan meal."],
+    [DateTime(2020, 9, 30).toString(), "Eat a vegan meal."],
+    [DateTime(2020, 10, 1).toString(), "Ride bicycle for 5 miles"],
+    [DateTime(2020, 10, 2).toString(), "Carpool with coworkers."],
+    [DateTime(2020, 10, 3).toString(), "Eat a vegan meal."],
+    [DateTime(2020, 10, 4).toString(), "Use reusable water bottle."],
+    [DateTime(2020, 10, 5).toString(), "Carpool with coworkers."],
+  ];
   
   static List<Company> DONATE_COMPANIES = [
     Company(

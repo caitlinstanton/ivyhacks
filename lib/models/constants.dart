@@ -1,6 +1,8 @@
 import 'package:ivyhack/models/company_model.dart';
 
 class Constant {
+  static const String DATA_COLLECTION_NAME = "user_data";
+  
   static List<Company> DONATE_COMPANIES = [
     Company(
         name: "American Red Cross",

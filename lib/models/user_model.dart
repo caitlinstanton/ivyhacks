@@ -3,7 +3,13 @@ import 'package:ivyhack/models/constants.dart';
 
 class UserState extends ChangeNotifier {
   String uid;
+  double currentScore = 0;
   Map<String, dynamic> data;
+  UserState({this.uid, this.currentScore, this.data});
+}
+
+class Demo{
+  static UserState demo = UserState(uid: "Demo", currentScore:105, data:{"name": "demo"});
 }
 
 // Below defines the data that each user will have

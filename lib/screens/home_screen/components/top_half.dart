@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ivyhack/models/text.dart';
 import 'package:ivyhack/screens/home_screen/components/more_options.dart';
-
+import 'package:ivyhack/models/user_model.dart';
 class TopHalf extends StatefulWidget {
   @override
   _TopHalfState createState() => _TopHalfState();
@@ -88,7 +88,7 @@ class _TopHalfState extends State<TopHalf> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SenText(
-                  '${_currentScore.toInt()}',
+                  '${Demo.demo.currentScore.toInt()}',
                   fontSize: 100,
                   fontWeight: FontWeight.bold,
                   color: Colors.green[900],
@@ -154,7 +154,7 @@ class _TopHalfState extends State<TopHalf> {
         onTap: onPressed ??
             () {
               print("Pressed '$tooltip'. ");
-              _currentScore += deltaScore ?? 0;
+              Demo.demo.currentScore += deltaScore ?? 0;
               setState(() {});
             },
       );

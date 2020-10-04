@@ -25,7 +25,7 @@ class _DonationScreenState extends State<DonationScreen> {
                 bottom: 10,
               ),
               child: Column(
-                //TODO: Convert text into senText
+                //TODO: Convert text into senText (and change lato into sen)
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),

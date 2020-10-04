@@ -83,6 +83,16 @@ class _HomeState extends State<Home> {
                   "/page2",
                 ); // This name is defined in routes.dart
               },
+            ),
+            FlatButton(
+              child: Text("Press this to get onto another another screen"),
+              color: Colors.green,
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  "/page3",
+                ); // This name is defined in routes.dart
+              },
             )
           ],
         ),

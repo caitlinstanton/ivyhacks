@@ -52,10 +52,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         await AuthService().logout();
                       },
                     ),
-                    itemCard("Change Password"),
-                    itemCard("Preferences"),
-                    itemCard("Language"),
-                    itemCard("What is Carbon Footprint?"),
+                    Expanded(
+                      child: Container(
+                        child: ListView(
+                          
+                          children: [
+                            itemCard("Change Password"),
+                            itemCard("Preferences"),
+                            itemCard("Language"),
+                            itemCard("What is Carbon Footprint?"),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
